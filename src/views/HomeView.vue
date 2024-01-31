@@ -1,5 +1,6 @@
 <template>
   <div class="container" ref="container">
+    <HelloWorld />
     <div class="col" v-for="(col, index) in columns" :key="index">
       <div
         ref="pic"
@@ -17,8 +18,12 @@
   </div>
 </template>
 <script>
+import HelloWorld from '@/components/HelloWorld.vue'
 export default {
   name: 'waterfall',
+  components: {
+    HelloWorld
+  },
   data() {
     const imgArr = [
       'https://film-grab.com/wp-content/uploads/2022/07/The-Adjuster-006.jpg',
@@ -263,7 +268,7 @@ export default {
       'https://film-grab.com/wp-content/uploads/2023/04/The-Silent-Twins-36.jpg',
       'https://film-grab.com/wp-content/uploads/2023/03/Pearl-65.jpg',
       'https://film-grab.com/wp-content/uploads/2022/04/Casino-Royale-029.jpg',
-      'https://film-grab.com/wp-content/uploads/2023/04/The-Whale-39.jpg',
+      'https://film-grab.com/wp-content/uploads/2023/04/The-Whale-39.jpg'
     ].map((el) => {
       return {
         src: el,
@@ -277,6 +282,11 @@ export default {
       imgItemWidth: 360, // 图片宽度
       gap: 20, // 间隙
       times: null
+    }
+  },
+  provide() {
+    return {
+      imgArrs: this.imgArr,
     }
   },
   async mounted() {
