@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="test-box">5555555</div>
     <div><input v-model="text" type="text" @keyup="handleText" /></div>
     <button>{{ btnText || 'loading...' }}</button>
     <p><input v-model="number" type="number" @keyup="handleNum" /></p>
@@ -56,6 +57,8 @@ export default {
   inject: ['imgArrs'],
   created() {
     this.getImgHeight()
+    let arr = [1, 2, 3, [4, [5, [6]]], [7, 8, 9]]
+    console.log(this.flatten(arr, Infinity))
   },
   mounted() {},
   methods: {
@@ -110,6 +113,10 @@ export default {
           item.width = img.width
         }
       })
+    },
+
+    flatten(arr, num) {
+      return arr.flat(num)
     }
   }
 }
@@ -120,6 +127,14 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+.test-box {
+  width: 300px;
+  height: 300px;
+  background-color: pink;
+  border: 10px solid red;
+  padding: 20px;
+  margin: 20px;
 }
 .contain {
   width: 99vw;
