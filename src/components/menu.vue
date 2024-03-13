@@ -1,4 +1,4 @@
-<script setup>
+<script>
 import { useContextmenu } from '@/utils'
 import { ref } from 'vue'
 
@@ -11,8 +11,7 @@ function handleEnter(el) {
   // 手动计算auto下撑开的容器高度
   el.style.height = 'auto'
   // 这里需要减去多余的padding
-  const h = el.clientHeight - Number(getComputedStyle(el).paddingTop.match(/^\d+/)[0]) * 2 
-  console.log(h,'--------');
+  const h = el.clientHeight - Number(getComputedStyle(el).paddingTop.match(/^\d+/)[0]) * 2
   // 高度回归为0 否则没有过渡效果
   el.style.height = 0 + 'px'
 

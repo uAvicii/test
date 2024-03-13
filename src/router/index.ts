@@ -21,6 +21,11 @@ const router = createRouter({
       path :'/contextmenu',
       name: 'contextmenu',
       component: () => import("@/views/ContextMenuView.vue")
+    },
+    {
+      path :'/map',
+      name: 'map',
+      component: () => import("@/views/map.vue")
     }
   ]
 })

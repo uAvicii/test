@@ -59,9 +59,7 @@ export default {
       <div id="left" style="overflow: hidden">
         <h1>{{ leftSelected }}</h1>
         <h2 class="title">
-          <span>
-            Migrating From MySQL to YugabyteDB Using YugabyteDB Voyager 
-          </span>
+          <span> Migrating From MySQL to YugabyteDB Using YugabyteDB Voyager </span>
         </h2>
       </div>
     </ContextMenu>
